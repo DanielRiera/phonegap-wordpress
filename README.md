@@ -79,30 +79,30 @@ Estos son los CSS que he creado por defecto, ya cada uno que cambie a su gusto.
 li {}
 ul {}
 .contenido {}
-ID navegador {}
+#navegador {}
 button {}
 
 /*************** MENU **************/
 
-ID menu {}
-ID menu ul {}
-ID menu ul li a {}
-ID menu ul li a:hover {}
+#menu {}
+#menu ul {}
+#menu ul li a {}
+#menu ul li a:hover {}
 
 /************* POST ****************/
 
-ID post {}
-ID titulo_post {}
-ID fecha_post {}
-ID contenido_post {}
-ID contenido_post img {}
-ID comentarios {}
-ID comentarios h2 {}
-ID comentarios .nombre_comment_post {}
-ID comentarios .commentdiv {}
-ID comentarios .nombre_comment_post {}
-ID comentarios .fecha_comment_post {}
-ID comentarios .contenido_comment_post {}
+#post {}
+#titulo_post {}
+#fecha_post {}
+#contenido_post {}
+#contenido_post img {}
+#comentarios {}
+#comentarios h2 {}
+#comentarios .nombre_comment_post {}
+#comentarios .commentdiv {}
+#comentarios .nombre_comment_post {}
+#comentarios .fecha_comment_post {}
+#comentarios .contenido_comment_post {}
 
 /*********** CATEGORIA **************/
 
