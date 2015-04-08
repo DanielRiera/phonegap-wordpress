@@ -63,7 +63,9 @@ TOKEN : Token de acceso por seguridad, así nadie que no tenga el Token correcto
 MODO: Mientras que se esté instalando ponerlo  "DEBUG" esto hará que cuando el dispositivo esté preparado iniciará una conexión con Wordpress y en caso de que esté configurado correctamente aparecerá en un alert el nombre de nuestro blog.
 
 Nota: Una vez que esté todo correcto, puede eliminar el modo y quedaría así:
-<code>wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN");</code>
+```javascript
+wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN");
+```
 
 Ahora solo faltaría darle algún estilo CSS a el contenido rescatado desde wordpress
 Estos son los CSS que he creado por defecto, ya cada uno que cambie a su gusto.
