@@ -57,11 +57,13 @@ DIV MENU: ID del div donde irá el listado de categorías.
 DIV CATEGORIA: ID del div donde irán los posts de cada categoría.
 
 DIV POST:  ID del div donde se mostrará cada post.
+
 TOKEN : Token de acceso por seguridad, así nadie que no tenga el Token correcto no podrá listar los contenidos de su wordpress.
 
 MODO: Mientras que se esté instalando ponerlo  "DEBUG" esto hará que cuando el dispositivo esté preparado iniciará una conexión con Wordpress y en caso de que esté configurado correctamente aparecerá en un alert el nombre de nuestro blog.
 
 Nota: Una vez que esté todo correcto, puede eliminar el modo y quedaría así:
+
 ```javascript
 wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN");
 ```
