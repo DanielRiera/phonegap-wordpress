@@ -33,12 +33,12 @@ Lo primero que hay que hacer es descargar el plugin para instalarlo en nuestro W
 Una vez instalado y configurado descargamos el JS para incluirlo en nuestra aplicación Phonegap.
 
 Añade el siguiente código en el index.html de tu proyecto.
-<script type="text/javascript" src="js/wp_connect.js"></script>
+<code><script type="text/javascript" src="js/wp_connect.js"></script></code>
 
 Ahora que tenemos el JS en nuestra carpeta de javascript de nuestro proyecto  e incluido el código anterior en el index.html procedemos a la configuración dentro del plugin.
 
 Cuando el dispositivo está preparado llamamos a la función para iniciar el plugin.
-wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN","MODO");
+<code>wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN","MODO");</code>
 
 
 URL : La url de nuestra instalación wordpress, por ejemplo si nuestra instalación está en el directorio raíz sería "www.dominio.com".
@@ -53,38 +53,45 @@ TOKEN : Token de acceso por seguridad, así nadie que no tenga el Token correcto
 MODO: Mientras que se esté instalando ponerlo  "DEBUG" esto hará que cuando el dispositivo esté preparado iniciará una conexión con Wordpress y en caso de que esté configurado correctamente aparecerá en un alert el nombre de nuestro blog.
 
 Nota: Una vez que esté todo correcto, puede eliminar el modo y quedaría así:
-wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN");
+<code>wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN");</code>
 
 Ahora solo faltaría darle algún estilo CSS a el contenido rescatado desde wordpress
 Estos son los CSS que he creado por defecto, ya cada uno que cambie a su gusto.
 
 
-CSS:
+#CSS
 /************* GENERALES ***********/
+
 li {}
 ul {}
 .contenido {}
-#navegador {}
+ID navegador {}
 button {}
+
 /*************** MENU **************/
-#menu {}
-#menu ul {}
-#menu ul li a {}
-#menu ul li a:hover {}
+
+ID menu {}
+ID menu ul {}
+ID menu ul li a {}
+ID menu ul li a:hover {}
+
 /************* POST ****************/
-#post {}
-#titulo_post {}
-#fecha_post {}
-#contenido_post {}
-#contenido_post img {}
-#comentarios {}
-#comentarios h2 {}
-#comentarios .nombre_comment_post {}
-#comentarios .commentdiv {}
-#comentarios .nombre_comment_post {}
-#comentarios .fecha_comment_post {}
-#comentarios .contenido_comment_post {}
+
+ID post {}
+ID titulo_post {}
+ID fecha_post {}
+ID contenido_post {}
+ID contenido_post img {}
+ID comentarios {}
+ID comentarios h2 {}
+ID comentarios .nombre_comment_post {}
+ID comentarios .commentdiv {}
+ID comentarios .nombre_comment_post {}
+ID comentarios .fecha_comment_post {}
+ID comentarios .contenido_comment_post {}
+
 /*********** CATEGORIA **************/
+
 .post {}
 .titulo_cat_post {}
 .fecha_cat_post {}
@@ -93,40 +100,8 @@ button {}
 
 En nuestro archivo index.html debe tener la siguiente estructura:
 
-HTML:
-<!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
+#HTML
+<code>
     <div class="contenido">
         <div id="navegador"></div>
         <div id="menu">
@@ -140,4 +115,5 @@ HTML:
         <div id="comentarios"></div>
         </div>
     </div>
+</code>
 
