@@ -6,7 +6,11 @@ El plugin tiene las siguientes opciones:
 (Se crearán más opciones)
 ¿Qué hace?
 1.	Menú de Categorías
-Genera un menú <ul><li><a></a></li></ul> con todas las categorías que estén creadas en Wordpress.
+Genera un menú 
+```html
+<ul><li><a></a></li></ul> 
+```
+con todas las categorías que estén creadas en Wordpress.
 
 2.	Listado de Artículos en cada Categoría
 	Muestra en divs los artículos de cada categoría con los datos
@@ -33,12 +37,18 @@ Lo primero que hay que hacer es descargar el plugin para instalarlo en nuestro W
 Una vez instalado y configurado descargamos el JS para incluirlo en nuestra aplicación Phonegap.
 
 Añade el siguiente código en el index.html de tu proyecto.
-<code><script type="text/javascript" src="js/wp_connect.js"></script></code>
+
+```html
+<script type="text/javascript" src="js/wp_connect.js"></script>
+```
 
 Ahora que tenemos el JS en nuestra carpeta de javascript de nuestro proyecto  e incluido el código anterior en el index.html procedemos a la configuración dentro del plugin.
 
 Cuando el dispositivo está preparado llamamos a la función para iniciar el plugin.
-<code>wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN","MODO");</code>
+
+```javascript
+wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN","MODO");
+```
 
 
 URL : La url de nuestra instalación wordpress, por ejemplo si nuestra instalación está en el directorio raíz sería "www.dominio.com".
@@ -60,6 +70,7 @@ Estos son los CSS que he creado por defecto, ya cada uno que cambie a su gusto.
 
 
 #CSS
+```css
 /************* GENERALES ***********/
 
 li {}
@@ -97,11 +108,11 @@ ID comentarios .contenido_comment_post {}
 .fecha_cat_post {}
 .contenido_cat_post {}
 .img_cat_post {}
-
+```
 En nuestro archivo index.html debe tener la siguiente estructura:
 
 #HTML
-<code>
+```html
     <div class="contenido">
         <div id="navegador"></div>
         <div id="menu">
@@ -115,5 +126,5 @@ En nuestro archivo index.html debe tener la siguiente estructura:
         <div id="comentarios"></div>
         </div>
     </div>
-</code>
+```
 
