@@ -1,4 +1,3 @@
-El plugin wordpress
 El plugin tiene las siguientes opciones:
 - Token
 - Mostrar comentarios en la aplicación
