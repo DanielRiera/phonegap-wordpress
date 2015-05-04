@@ -1,3 +1,5 @@
+#Conexión a Wordpress desde Phonegap
+
 El plugin tiene las siguientes opciones:
 - Token
 - Mostrar comentarios en la aplicación
