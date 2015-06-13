@@ -16,13 +16,13 @@ register_setting( 'pho_opciones_connect', 'pho_comentarios', 'pho_validar' );
 
 add_menu_page(
 'Opciones - Phonegap Connect',
-'Phonegap', //Nombre a mostrar panel opciones
+'Phonegap',
 
-'administrator',//nivel de usuario que puede ver el panel
+'administrator',
 
-'phonegap-connect', //identificador de mi panel dentro de wordpress
+'phonegap-connect',
 
-'pho_opciones_panel', //función a la que llamar y que mostrará las opciones dentro del panel
+'pho_opciones_panel',
 
 plugins_url( 'phonegap_connect/img/icon.png' )
 );
@@ -55,15 +55,16 @@ echo "
  </style>
     <form method='post'>
         <input type='hidden' name='action' value='salvaropciones'> 
-        <table>
+        <table width="1355">
         <tr>
-                <td>
+                <td width="337">
                     Token de acceso
                 </td>
-                <td>
+                <td width="468">
                     <input type='text' name='token' id='token' value='<?=get_option('pho_token')?>' required>
                     <span class="nota">Token para acceder a los datos.</span>
                 </td>
+                <td width="534" rowspan="4" align="left" valign="top">&nbsp;</td>
             </tr>
             <tr>
                 <td>
@@ -93,7 +94,7 @@ echo "
                 </td>
             </tr>
             <tr>
-                <td colspan='2'>
+                <td colspan='3'>
                     <input type='submit' value='Enviar'>
                 </td>
             </tr>
