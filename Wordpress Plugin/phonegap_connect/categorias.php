@@ -1,5 +1,4 @@
 <?php
-header('Content-Type: application/json');
 require('../../../wp-load.php');
 if($_POST['to']!=get_option('pho_token')){
 exit();	

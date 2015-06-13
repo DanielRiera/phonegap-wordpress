@@ -1,5 +1,4 @@
 <?php
-header('Content-Type: application/json');
 require('../../../wp-load.php');
 require('../../../wp-includes/pluggable.php');
 $categoria = $_POST['id'];

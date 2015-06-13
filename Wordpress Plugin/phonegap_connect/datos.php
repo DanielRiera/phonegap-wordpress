@@ -1,5 +1,4 @@
 <?php
-header('Content-Type: application/json');
 /*
 Plugin Name: Phonegap Connect
 Description: Conexión a Wordpress desde Phonegap
