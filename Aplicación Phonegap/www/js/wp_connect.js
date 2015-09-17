@@ -23,7 +23,6 @@ function wp_ini(url,div_cat,div_posts,div_post,token,modo) {
     wp_cats();
 }
 function wp_posts(idcategoria) {
-    ocultarTodo();
      var datax = "id="+idcategoria + "&to=" + to;
         $.ajax({
         url : url_connect + "categoria.php",
@@ -56,7 +55,6 @@ function wp_posts(idcategoria) {
     
 }
 function wp_post(slug,idcat) {
-    ocultarTodo();
     document.getElementById("navegador").innerHTML = "<button onclick='wp_posts("+idcat+");'>Categoria</button>";
     $("#"+cont_posts).fadeOut(200);
      var datax = "slug="+slug+"&to="+to;
@@ -84,7 +82,6 @@ function wp_post(slug,idcat) {
     });
 }
 function wp_cats() {
-       ocultarTodo();
      var datax = "to="+to;
         $.ajax({
         url : url_connect + "categorias.php",
@@ -131,14 +128,4 @@ function wp_comentarios(id) {
            alert("Error en Comentarios.");
         }
     });
-}
-function ocultarTodo() {
-    document.getElementById(cont_comentarios).style.display = "none";
-    document.getElementById(cont_posts).innerHTML = "";
-    document.getElementById(cont_posts).style.display = "none";
-    document.getElementById(cont_categoria).innerHTML = "";
-    document.getElementById(cont_categoria).style.display = "none";
-    document.getElementById(cont_post).innerHTML = "";
-    document.getElementById(cont_post).style.display = "none";
-
 }
