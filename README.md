@@ -6,11 +6,11 @@ Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha 
 
 #¿Que hace?
 
-- [Listado de Categorias creadas.](https://github.com/DanielRiera/wordpress-phonegap#categorias)
-- [Listado de Entradas de cada categoría](https://github.com/DanielRiera/wordpress-phonegap#entradas-en-una-categoria)
-- [Entradas](https://github.com/DanielRiera/wordpress-phonegap#entrada)
-- [Listado de Comentarios de cada Entradas](https://github.com/DanielRiera/wordpress-phonegap#comentarios)
-- [Páginas](https://github.com/DanielRiera/wordpress-phonegap#paginas)
+- [Listado de Categorias creadas.](https://github.com/DanielRiera/phonegap-wordpress#categorias)
+- [Listado de Entradas de cada categoría](https://github.com/DanielRiera/phonegap-wordpress#entradas-en-una-categoria)
+- [Entradas](https://github.com/DanielRiera/phonegap-wordpress#entrada)
+- [Listado de Comentarios de cada Entradas](https://github.com/DanielRiera/phonegap-wordpress#comentarios)
+- [Páginas](https://github.com/DanielRiera/phonegap-wordpress#paginas)
 
 #Instalacion
 
