@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 require('../../../wp-load.php');
 require('../../../wp-includes/pluggable.php');
 if($_POST['to'] != get_option('pho_token')){
-//exit();	
+exit();	
 }
 $post = "";
 global $wpdb;

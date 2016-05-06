@@ -1,7 +1,7 @@
 <?php
 require('../../../wp-load.php');
 if($_POST['to']!=get_option('pho_token')){
-//exit();	
+exit();	
 }
 if(get_option('pho_mostrar_categorias_vacias')==1){
 $oculta = 0;

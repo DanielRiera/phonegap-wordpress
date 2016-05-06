@@ -3,7 +3,7 @@ require('../../../wp-load.php');
 require('../../../wp-includes/pluggable.php');
 $categoria = $_GET['id'];
 if($_POST['to'] != get_option('pho_token')){
-//exit();	
+exit();	
 }
 global $wpdb;
 $args = array(
