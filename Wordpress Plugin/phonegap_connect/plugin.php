@@ -35,7 +35,7 @@ echo "
     <?php
  if(isset($_POST['action']) && $_POST['action'] == "salvaropciones"){
         update_option('pho_limite_caracteres',$_POST['caracteres_limite']);
-		update_option('pho_token',$_POST['token']);
+        update_option('pho_token',$_POST['token']);
         update_option('pho_mostrar_comentarios',$_POST['comentarios']);
         update_option('pho_mostrar_categorias_vacias',$_POST['cat_vacias']);
         echo("<div class='updated message' style='padding: 10px'>Opciones guardadas.</div>");
@@ -44,14 +44,14 @@ echo "
     ?>
  <style>
  table tr td {
-	 padding:10px; 
+     padding:10px; 
  }
  .nota {
-	 color:#666;
-	 font-size:10px;	 
-	}
+     color:#666;
+     font-size:10px;     
+    }
  </style>
- <div style="float: left">
+ <div>
     <form method='post'>
         <input type='hidden' name='action' value='salvaropciones'> 
         <table width="1355">
@@ -99,7 +99,8 @@ echo "
             </tr>
         </table>
     </form></div>
-    <div style="float: left;">
+    <div>
+        <h2>Nos ayudas a seguir mejorando?</h2>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="E453H4H5H4XM2">
@@ -108,7 +109,7 @@ echo "
 </form>
 
     </div>
-	<?php echo "";
+    <?php echo "";
 }
 
 add_action('admin_menu', 'pho_panel_opciones');
