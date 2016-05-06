@@ -1,16 +1,16 @@
 #Conexión a Wordpress desde Phonegap
 
-[Entra en el blog](http://danielriera.net/phonegap/conectar-wordpress-con-aplicacion-phonegap)
+[Entra en el blog](http://danielriera.net/phonegap/conectar-wordpress-con-aplicacion-phonegap){:target="_blank"}
 
 Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha mejorado el plugin de Wordpress para ofrecer más datos sobre todo lo que puede recopilar de Wordpress, se han añadido mejoras en el plugin que hace más facil el control de lo que se muestra en nuestra aplicación.
 
 #¿Que hace?
 
-- [Listado de Categorias creadas.](https://github.com/DanielRiera/wordpress-phonegap-connect#categorias)
-- [Listado de Entradas de cada categoría](https://github.com/DanielRiera/wordpress-phonegap-connect#entradas-en-una-categoria)
-- [Entradas](https://github.com/DanielRiera/wordpress-phonegap-connect#entrada)
-- [Listado de Comentarios de cada Entradas](https://github.com/DanielRiera/wordpress-phonegap-connect#comentarios)
-- [Páginas](https://github.com/DanielRiera/wordpress-phonegap-connect#paginas)
+- [Listado de Categorias creadas.](https://github.com/DanielRiera/wordpress-phonegap#categorias)
+- [Listado de Entradas de cada categoría](https://github.com/DanielRiera/wordpress-phonegap#entradas-en-una-categoria)
+- [Entradas](https://github.com/DanielRiera/wordpress-phonegap#entrada)
+- [Listado de Comentarios de cada Entradas](https://github.com/DanielRiera/wordpress-phonegap#comentarios)
+- [Páginas](https://github.com/DanielRiera/wordpress-phonegap#paginas)
 
 #Instalacion
 
