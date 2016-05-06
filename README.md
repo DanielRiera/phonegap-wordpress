@@ -1,74 +1,240 @@
 #Conexión a Wordpress desde Phonegap
 
-El plugin tiene las siguientes opciones:
-- Token
-- Mostrar comentarios en la aplicación
-- Mostrar categorías vacías
-(Se crearán más opciones)
-¿Qué hace?
-1.	Menú de Categorías
-Genera un menú 
-```html
-<ul><li><a></a></li></ul> 
-```
-con todas las categorías que estén creadas en Wordpress.
+Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha mejorado el plugin de Wordpress para ofrecer más datos sobre todo lo que puede recopilar de Wordpress, se han añadido mejoras en el plugin que hace más facil el control de lo que se muestra en nuestra aplicación.
 
-2.	Listado de Artículos en cada Categoría
-	Muestra en divs los artículos de cada categoría con los datos
- 	(Se irán agregando nuevos datos en las siguientes versiones):
+#¿Que hace?
 
-	- Titulo Artículo
-	- Fecha Artículo
-	- Comentarios Artículo
-	- Imagen (Si tiene)
-	- Contenido del Artículo
+En esta versión 2.0.0 se han añadido "Páginas", entonces las funciones que ofrecen son:
 
-3.	Artículo
-	Muestra el artículo completo
+- [Listado de Categorias creadas.](https://github.com/DanielRiera/wordpress-phonegap-connect#categorias)
+- [Listado de Entradas de cada categoría](https://github.com/DanielRiera/wordpress-phonegap-connect#entradas-en-una-categoria)
+- [Entradas](https://github.com/DanielRiera/wordpress-phonegap-connect#entrada)
+- [Listado de Comentarios de cada Entradas](https://github.com/DanielRiera/wordpress-phonegap-connect#comentarios)
+- [Páginas](https://github.com/DanielRiera/wordpress-phonegap-connect#paginas)
 
-4.	Comentarios de Cada Post
-	En cada artículo muestra todos los comentarios basados en divs.
+#Instalacion
 
-5.	Próximamente y cuando se compruebe que nadie tiene problemas en su implementación y que todo está correcto se crearán más funciones....
-	
-Como se implementa en nuestra aplicación
+Descargar desde aqui el plugin que se tiene que instalar en nuestro Wordpress, una vez instalado vamos a la configuración del Plugin
 
-Lo primero que hay que hacer es descargar el plugin para instalarlo en nuestro Wordpress puedes descargarlo desde Github.
+Readme en Desarrollo....
 
-Una vez instalado y configurado descargamos el JS para incluirlo en nuestra aplicación Phonegap.
+#Uso
 
-Añade el siguiente código en el index.html de tu proyecto.
-
-```html
-<script type="text/javascript" src="js/wp_connect.js"></script>
-```
-
-Ahora que tenemos el JS en nuestra carpeta de javascript de nuestro proyecto  e incluido el código anterior en el index.html procedemos a la configuración dentro del plugin.
-
-Cuando el dispositivo está preparado llamamos a la función para iniciar el plugin.
+### Inicio **Obligatorio**
 
 ```javascript
-wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN","MODO");
+WP.ini(URL, TOKEN, MODO);
+```
+
+**PARAMETROS**:
+Los parametros enviados a esta función inician el sistema y generan las variables de conexión a Wordpress, no tiene Callback, solo si se ejecuta con el MODO: "DEBUG" lanzará un alert con una conexión satisfactoria, en caso de que no reciba ningún alert, el error aparecerá en la consola.
+
+**URL :** Dirección de la instalación de Wordpress **IMPORTANTE** incluir "http://" para que funcione adecuadamente, será la raíz de la instalación por "Ejemplo, http://www.example.com" además **recuerda** no incluir "/" al final de la URL.
+
+**TOKEN :** Token que tienes que generar en la instalación de Wordpress, puede ser números, letras, mayúsculas y minúsculas, todo junto, sin espacios, **No utilizar un token fácil de recordar o leer**.
+
+**MODO :** Puede ser "DEBUG" o ninguno, en caso de que esté fijado en "DEBUG" este lanzará un alert con la conexión correcta al Wordpress, En producción utilizar "NULL". 
+
+
+**Ejemplo:**
+```javascript
+WP.ini("http://www.example.com","as545D4654654sdg64GH6A8SDhh48A16F81GAS6H468J4", "DEBUG");
 ```
 
 
-URL : La url de nuestra instalación wordpress, por ejemplo si nuestra instalación está en el directorio raíz sería "www.dominio.com".
-
-DIV MENU: ID del div donde irá el listado de categorías.
-
-DIV CATEGORIA: ID del div donde irán los posts de cada categoría.
-
-DIV POST:  ID del div donde se mostrará cada post.
-
-TOKEN : Token de acceso por seguridad, así nadie que no tenga el Token correcto no podrá listar los contenidos de su wordpress.
-
-MODO: Mientras que se esté instalando ponerlo  "DEBUG" esto hará que cuando el dispositivo esté preparado iniciará una conexión con Wordpress y en caso de que esté configurado correctamente aparecerá en un alert el nombre de nuestro blog.
-
-Nota: Una vez que esté todo correcto, puede eliminar el modo y quedaría así:
+### Categorias
 
 ```javascript
-wp_ini(" URL "," DIV MENU "," DIV CATEGORIA"," DIV POST","TOKEN");
+WP.categories(callback);
 ```
+
+**Respuesta**:
+Estos son los parametros que se reciben, son los datos de cada categoría.
+
+    [term_id]
+    [name]
+    [slug]
+    [term_group]
+    [term_taxonomy_id]
+    [taxonomy]
+    [description]
+    [parent]
+    [count]
+
+
+**Ejemplo:**
+```javascript
+WP.categories(function(result) {
+        for(i=0;i < result.length;i++) {
+             console.log(result[i]['name']);
+         }
+    });
+```
+
+### Entradas en una Categoria
+
+```javascript
+WP.category(callback, ID_CATEGORIA);
+```
+**Respuesta**:
+Estos son los parametros que se reciben al llamar a una categoría, son los datos de las entradas de cada categoría.
+
+    [ID]
+    [post_author]
+    [post_date]
+    [post_date_gmt] 
+    [post_content] 
+    [post_title] 
+    [post_excerpt] 
+    [post_status]
+    [comment_status]
+    [ping_status] 
+    [post_password] 
+    [post_name]
+    [to_ping] 
+    [pinged] 
+    [post_modified] 
+    [post_modified_gmt]
+    [post_content_filtered] 
+    [post_parent] 
+    [guid] 
+    [menu_order]
+    [post_type]
+    [post_mime_type] 
+    [comment_count]
+    [filter]
+
+**Ejemplo**:
+
+```javascript
+WP.category(function(result) {
+        for(i=0;i < result.length;i++) {
+             console.log(result[i]['post_title']);
+         }
+    }, 1);
+```
+
+### Entrada
+
+```javascript
+WP.post(callback, ID_POST);
+```
+
+**Respuesta**:
+Estos son los parametros que se reciben al llamar a la función de entradas, son datos del post.
+
+    [ID]
+    [post_author]
+    [post_date]
+    [post_date_gmt] 
+    [post_content] 
+    [post_title] 
+    [post_excerpt] 
+    [post_status]
+    [comment_status]
+    [ping_status] 
+    [post_password] 
+    [post_name]
+    [to_ping] 
+    [pinged] 
+    [post_modified] 
+    [post_modified_gmt]
+    [post_content_filtered] 
+    [post_parent] 
+    [guid] 
+    [menu_order]
+    [post_type]
+    [post_mime_type] 
+    [comment_count]
+    [filter]
+
+**Ejemplo**:
+
+```javascript
+WP.post(function(result) {
+             console.log(result[i]['post_title']);
+    }, 1);
+```
+
+### Comentarios
+
+```javascript
+WP.comment(callback, ID_POST);
+```
+
+**Respuesta**:
+Estos son los parametros que se reciben al llamar a la función de comentarios, son datos los datos de todos los comenatarios de esa entrada.
+    [comment_ID]
+    [comment_post_ID]
+    [comment_author] 
+    [comment_author_email] 
+    [comment_author_url] 
+    [comment_author_IP] 
+    [comment_date] 
+    [comment_date_gmt] 
+    [comment_content] 
+    [comment_karma] 
+    [comment_approved] 
+    [comment_agent] 
+    [comment_type] 
+    [comment_parent] 
+    [user_id]
+
+**Ejemplo**:
+
+```javascript
+WP.comment(function(result) {
+        for(i=0;i < result.length;i++) {
+             console.log(result[i]['comment_content']);
+         }
+    }, 1);
+```
+
+### Paginas
+
+```javascript
+WP.page(callback, ID_PAGINA);
+```
+
+**Respuesta**
+Estos son los parametros que se reciben al llamar a la función de Páginas, son los mismos valores que se reciben en el caso de las entradas.
+    
+    [ID]
+    [post_author]
+    [post_date]
+    [post_date_gmt]
+    [post_content] 
+    [post_title]
+    [post_excerpt] 
+    [post_status]
+    [comment_status]
+    [ping_status] 
+    [post_password]
+    [post_name]
+    [to_ping]
+    [pinged]
+    [post_modified]
+    [post_modified_gmt]
+    [post_content_filtered]
+    [post_parent]
+    [guid]
+    [menu_order]
+    [post_type]
+    [post_mime_type]
+    [comment_count]
+    [ancestors]
+    [filter]
+
+**Ejemplo**:
+
+```javascript
+WP.page(function(result) {
+             console.log(result[i]['post_title']);
+    }, 1);
+```
+
+#Licencia
+
 
 Ahora solo faltaría darle algún estilo CSS a el contenido rescatado desde wordpress
 Estos son los CSS que he creado por defecto, ya cada uno que cambie a su gusto.
