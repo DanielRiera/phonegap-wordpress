@@ -5,9 +5,7 @@ Description: Conexión a Wordpress desde Phonegap
 Author: Daniel Riera
 Version: 2.0.0
 */
-function guardarOpciones() {
-	
-}
+
 function pho_panel_opciones(){
 $opciones = get_option('pho_opciones',$valores_default);
 register_setting( 'pho_opciones_connect', 'pho_comentarios', 'pho_validar' );
@@ -53,6 +51,7 @@ echo "
 	 font-size:10px;	 
 	}
  </style>
+ <div style="float: left">
     <form method='post'>
         <input type='hidden' name='action' value='salvaropciones'> 
         <table width="1355">
@@ -99,7 +98,16 @@ echo "
                 </td>
             </tr>
         </table>
-    </form>
+    </form></div>
+    <div style="float: left;">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="E453H4H5H4XM2">
+<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
+<img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+    </div>
 	<?php echo "";
 }
 
