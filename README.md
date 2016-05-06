@@ -4,8 +4,6 @@ Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha 
 
 #¿Que hace?
 
-En esta versión 2.0.0 se han añadido "Páginas", entonces las funciones que ofrecen son:
-
 - [Listado de Categorias creadas.](https://github.com/DanielRiera/wordpress-phonegap-connect#categorias)
 - [Listado de Entradas de cada categoría](https://github.com/DanielRiera/wordpress-phonegap-connect#entradas-en-una-categoria)
 - [Entradas](https://github.com/DanielRiera/wordpress-phonegap-connect#entrada)
