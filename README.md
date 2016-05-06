@@ -1,6 +1,6 @@
 #Conexión a Wordpress desde Phonegap
 
-[Entra en el blog](http://danielriera.net/phonegap/conectar-wordpress-con-aplicacion-phonegap){:target="_blank"}
+<a href="http://danielriera.net/phonegap/conectar-wordpress-con-aplicacion-phonegap" target="_blank">Entra en el blog</a>
 
 Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha mejorado el plugin de Wordpress para ofrecer más datos sobre todo lo que puede recopilar de Wordpress, se han añadido mejoras en el plugin que hace más facil el control de lo que se muestra en nuestra aplicación.
 
