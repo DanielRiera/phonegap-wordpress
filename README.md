@@ -229,6 +229,11 @@ WP.page(function(result) {
              console.log(result[i]['post_title']);
     }, 1);
 ```
+#Ayuda
+
+##Si te ha sido de ayuda el plugin y quieres apoyar a su desarrollo puedes hacer una donación :)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E453H4H5H4XM2)
 
 #Licencia
 
