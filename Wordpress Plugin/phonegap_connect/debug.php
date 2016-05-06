@@ -1,9 +1,15 @@
 <?php
 require('../../../wp-load.php');
 $token = $_POST['tok'];
+$name = get_bloginfo('name');
 if($token!=get_option('pho_token')){
-echo "Token no válido";
+$res = array(
+'name' => "Token no válido"
+);
 }else{
-echo bloginfo('name');	
+$res = array(
+'name' => $name
+);
 }
+echo json_encode($res);
 ?>
