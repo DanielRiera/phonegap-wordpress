@@ -160,6 +160,7 @@ WP.comment(callback, ID_POST);
 
 **Respuesta**:
 Estos son los parametros que se reciben al llamar a la función de comentarios, son datos los datos de todos los comenatarios de esa entrada.
+
     [comment_ID]
     [comment_post_ID]
     [comment_author] 
