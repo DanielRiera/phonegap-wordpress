@@ -25,13 +25,15 @@ WP.ini(URL, TOKEN, MODO);
 ```
 
 **PARAMETROS**:
-Los parametros enviados a esta función inician el sistema y generan las variables de conexión a Wordpress, no tiene Callback, solo si se ejecuta con el MODO: "DEBUG" lanzará un alert con una conexión satisfactoria, en caso de que no reciba ningún alert, el error aparecerá en la consola.
+Los parametros enviados a esta función inician el sistema y generan las variables de conexión a Wordpress, no tiene Callback, solo si se ejecuta con el MODO: "DEBUG"
 
 **URL :** Dirección de la instalación de Wordpress **IMPORTANTE** incluir "http://" para que funcione adecuadamente, será la raíz de la instalación por "Ejemplo, http://www.example.com" además **recuerda** no incluir "/" al final de la URL.
 
 **TOKEN :** Token que tienes que generar en la instalación de Wordpress, puede ser números, letras, mayúsculas y minúsculas, todo junto, sin espacios, **No utilizar un token fácil de recordar o leer**.
 
-**MODO :** Puede ser "DEBUG" o ninguno, en caso de que esté fijado en "DEBUG" este lanzará un alert con la conexión correcta al Wordpress, En producción utilizar "NULL". 
+**MODO :** Puede ser "DEBUG" o ninguno, en caso de que esté fijado en "DEBUG" mostrará un mensaje por consola diciendo "Conexión establecida con [NOMBRE_DEL_BLOG]", en caso de establecer este modo y no recibir este mensaje, mostrará otro mensaje de error por consola.
+
+El modo DEBUG no se recomienda para entornos en producción, en producción utilizar "NULL". 
 
 
 **Ejemplo:**
