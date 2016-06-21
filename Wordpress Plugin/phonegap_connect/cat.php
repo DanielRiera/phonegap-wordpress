@@ -1,7 +1,7 @@
 <?php
 require('../../../wp-load.php');
 require('../../../wp-includes/pluggable.php');
-$categoria = $_GET['id'];
+$categoria = $_POST['id'];
 if($_POST['to'] != get_option('pho_token')){
 exit();	
 }

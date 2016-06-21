@@ -1,7 +1,7 @@
 /*
 
 Autor: Daniel Riera
-Version 2.0.0
+Version 2.0.1
 (C) 2016
 
 */
@@ -33,7 +33,7 @@ watchCallback ="";
 		$.ajax({
 			url : url+"/wp-content/plugins/phonegap_connect/cat.php",
 			dataType : "JSON",
-			method : "GET",
+			method : "POST",
 			data : "to="+token+"&id="+id,
 			success : function(result) {
 				watchCallback(result);
