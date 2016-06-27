@@ -1,5 +1,22 @@
 #Conexión a Wordpress desde Phonegap
 
+
+Log de Cambios
+
+- Añadido soporte para imágenes destacadas
+
+
+Información importante
+````
+Al añadir soporte para imagenes destacadas tanto en listados como en la vista del post se ha añadido lo siguiente.
+
+Antes: Se recibía la información en JSON directamente en una variable de la función. ejemplo: function(result) {...} por lo tanto
+"result" contenida todo el JSON. Ahora se han separado en dos partes, una para los posts que reciba y otra para las imagenes por lo que quedaría de la siguiente forma
+
+Ahora: Si como en el ejemplo anterior la variable de la función recibia "result" ahora para llegar hasta por ejemplo el id deberá ser así
+result['posts']['ID'] y para las imagenes result['images']['image']. Ya se agregaría un incremental si fuera necesario.
+
+````
 <a href="http://danielriera.net/phonegap/conectar-wordpress-con-aplicacion-phonegap" target="_blank">Entra en el blog</a>
 
 Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha mejorado el plugin de Wordpress para ofrecer más datos sobre todo lo que puede recopilar de Wordpress, se han añadido mejoras en el plugin que hace más facil el control de lo que se muestra en nuestra aplicación.
@@ -79,6 +96,7 @@ WP.category(callback, ID_CATEGORIA);
 **Respuesta**:
 Estos son los parametros que se reciben al llamar a una categoría, son los datos de las entradas de cada categoría.
 
+posts:
     [ID]
     [post_author]
     [post_date]
@@ -103,13 +121,15 @@ Estos son los parametros que se reciben al llamar a una categoría, son los dato
     [post_mime_type] 
     [comment_count]
     [filter]
+images:
+    [imagen]
 
 **Ejemplo**:
 
 ```javascript
 WP.category(function(result) {
-        for(i=0;i < result.length;i++) {
-             console.log(result[i]['post_title']);
+        for(i=0;i < result['posts'].length;i++) {
+             console.log(result['posts'][i]['post_title']);
          }
     }, 1);
 ```
@@ -123,6 +143,7 @@ WP.post(callback, ID_POST);
 **Respuesta**:
 Estos son los parametros que se reciben al llamar a la función de entradas, son datos del post.
 
+posts:
     [ID]
     [post_author]
     [post_date]
@@ -147,12 +168,14 @@ Estos son los parametros que se reciben al llamar a la función de entradas, son
     [post_mime_type] 
     [comment_count]
     [filter]
+images:
+    [imagen]
 
 **Ejemplo**:
 
 ```javascript
 WP.post(function(result) {
-             console.log(result[i]['post_title']);
+             console.log(result['posts'][i]['post_title']);
     }, 1);
 ```
 
@@ -199,7 +222,8 @@ WP.page(callback, ID_PAGINA);
 
 **Respuesta**
 Estos son los parametros que se reciben al llamar a la función de Páginas, son los mismos valores que se reciben en el caso de las entradas.
-    
+
+posts:
     [ID]
     [post_author]
     [post_date]
@@ -225,12 +249,14 @@ Estos son los parametros que se reciben al llamar a la función de Páginas, son
     [comment_count]
     [ancestors]
     [filter]
+images:
+    [imagen]
 
 **Ejemplo**:
 
 ```javascript
 WP.page(function(result) {
-             console.log(result[i]['post_title']);
+             console.log(result['posts'][i]['post_title']);
     }, 1);
 ```
 #Ayuda
