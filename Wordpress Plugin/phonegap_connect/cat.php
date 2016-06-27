@@ -17,7 +17,9 @@ $args = array(
 $posts_array = get_posts( $args );
 if(0 < $posts_array) {
 foreach( $posts_array as $term) {
-$res[] = $term;	
+$res['posts'][] = $term;	
+$image = wp_get_attachment_image_src( get_post_thumbnail_id( $term->ID ), 'medium' );
+$res['images'][]['imagen'] = $image;
 }
 header('Content-Type: application/json');
 echo json_encode($res);
