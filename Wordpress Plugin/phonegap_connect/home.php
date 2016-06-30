@@ -20,6 +20,8 @@ foreach( $posts_array as $term) {
 $res['posts'][] = $term;	
 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $term->ID ), 'medium' );
 $res['images'][]['imagen'] = $image;
+$custom_fields = get_post_custom($term->ID);
+ $res['custom_field'][] = $custom_fields;
 }
 echo json_encode($res);
 }else{

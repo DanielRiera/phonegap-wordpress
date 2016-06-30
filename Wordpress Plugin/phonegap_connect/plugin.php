@@ -35,7 +35,7 @@ echo "
     <?php
  if(isset($_POST['action']) && $_POST['action'] == "salvaropciones"){
         update_option('pho_limite_caracteres',$_POST['caracteres_limite']);
-        update_option('pho_token',$_POST['token']);
+		update_option('pho_token',$_POST['token']);
         update_option('pho_mostrar_comentarios',$_POST['comentarios']);
         update_option('pho_mostrar_categorias_vacias',$_POST['cat_vacias']);
         echo("<div class='updated message' style='padding: 10px'>Opciones guardadas.</div>");
@@ -44,12 +44,12 @@ echo "
     ?>
  <style>
  table tr td {
-     padding:10px; 
+	 padding:10px; 
  }
  .nota {
-     color:#666;
-     font-size:10px;     
-    }
+	 color:#666;
+	 font-size:10px;	 
+	}
  </style>
  <div>
     <form method='post'>
@@ -109,7 +109,7 @@ echo "
 </form>
 
     </div>
-    <?php echo "";
+	<?php echo "";
 }
 
 add_action('admin_menu', 'pho_panel_opciones');
