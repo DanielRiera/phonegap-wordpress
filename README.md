@@ -11,11 +11,15 @@ Información importante
 ````
 Al añadir soporte para imagenes destacadas tanto en listados como en la vista del post se ha añadido lo siguiente.
 
-Antes: Se recibía la información en JSON directamente en una variable de la función. ejemplo: function(result) {...} por lo tanto
-"result" contenida todo el JSON. Ahora se han separado en dos partes, una para los posts que reciba y otra para las imagenes por lo que quedaría de la siguiente forma
+Antes: Se recibía la información en JSON directamente en una variable de la función. ejemplo: 
+function(result) {...} por lo tanto "result" contenida todo el JSON. Ahora se han separado en dos partes, una para
+ los posts que reciba y otra para las imagenes por lo que quedaría de la siguiente forma
 
-Ahora: Si como en el ejemplo anterior la variable de la función recibia "result" ahora para llegar hasta por ejemplo el id deberá ser así
-result['posts']['ID'] y para las imagenes result['images']['image']. Ya se agregaría un incremental si fuera necesario.
+Ahora: Si como en el ejemplo anterior la variable de la función recibia "result" ahora para llegar hasta por ejemplo
+ el id deberá ser así result['posts']['ID'] y para las imagenes result['images']['image']. Ya se agregaría un 
+ incremental si fuera necesario.
+
+Custom Field : Al añadir soporte de estos datos se ha añadido una tercera parte al JSON ( posts, images, custom_field).
 
 ````
 <a href="http://danielriera.net/phonegap/conectar-wordpress-con-aplicacion-phonegap" target="_blank">Entra en el blog</a>
