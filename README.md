@@ -3,7 +3,8 @@
 
 Log de Cambios
 
-- Añadido soporte para imágenes destacadas
+- Añadido soporte para imágenes destacadas 27/06/2016
+- Añadido soporte para custom field 30/06/2016
 
 
 Información importante
@@ -58,6 +59,54 @@ El modo DEBUG no se recomienda para entornos en producción, en producción util
 WP.ini("http://www.example.com","as545D4654654sdg64GH6A8SDhh48A16F81GAS6H468J4", "DEBUG");
 ```
 
+### Ultimas entradas (Home)
+
+```javascript
+WP.home(callback);
+```
+
+**Respuesta**:
+Estos son los parametros que se reciben, son los datos de cada post.
+
+    posts:
+    [ID]
+    [post_author]
+    [post_date]
+    [post_date_gmt] 
+    [post_content] 
+    [post_title] 
+    [post_excerpt] 
+    [post_status]
+    [comment_status]
+    [ping_status] 
+    [post_password] 
+    [post_name]
+    [to_ping] 
+    [pinged] 
+    [post_modified] 
+    [post_modified_gmt]
+    [post_content_filtered] 
+    [post_parent] 
+    [guid] 
+    [menu_order]
+    [post_type]
+    [post_mime_type] 
+    [comment_count]
+    [filter]
+images:
+    [imagen]
+custom_field
+    [NOMBRE_PERSONALIZADOS]
+
+
+**Ejemplo:**
+```javascript
+WP.home(function(result) {
+        for(i=0;i < result.length;i++) {
+             console.log(result[i]['post_title']);
+         }
+    });
+```
 
 ### Categorias
 
@@ -123,6 +172,8 @@ posts:
     [filter]
 images:
     [imagen]
+custom_field
+    [NOMBRE_PERSONALIZADOS]
 
 **Ejemplo**:
 
@@ -170,12 +221,14 @@ posts:
     [filter]
 images:
     [imagen]
+custom_field
+    [NOMBRE_PERSONALIZADOS]
 
 **Ejemplo**:
 
 ```javascript
 WP.post(function(result) {
-             console.log(result['posts'][i]['post_title']);
+             console.log(result['posts']['post_title']);
     }, 1);
 ```
 
