@@ -6,9 +6,16 @@ if($_POST['to'] != get_option('pho_token')){
 exit();	
 }
 $post = "";
+$elementos = 5;
+$yaCargados = 0;
 global $wpdb;
+$elementos = $_POST['num_post'];
+$yaCargados = $_POST['paginacion'];
+}
 $args = array(
-	'orderby'          => 'post_date',
+	'posts_per_page'	=> $elementos,
+	'offset'           => $yaCargados,
+	'orderby'          => 'post_date',	
 	'order'            => 'DESC',
 	'post_type'        => 'post',
 	'post_status'      => 'publish',

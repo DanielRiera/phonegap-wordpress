@@ -5,6 +5,7 @@ Log de Cambios
 
 - Añadido soporte para imágenes destacadas 27/06/2016
 - Añadido soporte para custom field 30/06/2016
+- Añadido opción de paginación en HOME y CATEGORIAS 03/07/2016
 
 
 Información importante
@@ -43,7 +44,7 @@ Comprimir en ZIP la carpeta phonegap_connect, subir el plugin con el administrad
 ### Inicio **Obligatorio**
 
 ```javascript
-WP.ini(URL, TOKEN, MODO);
+WP.ini(URL, TOKEN, MODO, NUMERO_POST_POR_LLAMADA);
 ```
 
 **PARAMETROS**:
@@ -57,6 +58,8 @@ Los parametros enviados a esta función inician el sistema y generan las variabl
 
 El modo DEBUG no se recomienda para entornos en producción, en producción utilizar "NULL". 
 
+**NUMERO_POST_POR_LLAMADA :** El número de elementos que devolverá el plugin Wordpress, si no se establece será por defecto 5.
+
 
 **Ejemplo:**
 ```javascript
@@ -66,8 +69,10 @@ WP.ini("http://www.example.com","as545D4654654sdg64GH6A8SDhh48A16F81GAS6H468J4",
 ### Ultimas entradas (Home)
 
 ```javascript
-WP.home(callback);
+WP.home(callback, continuo);
 ```
+
+**continuo: ** Si se establece 1 continuará la paginación.
 
 **Respuesta**:
 Estos son los parametros que se reciben, son los datos de cada post.
@@ -144,8 +149,11 @@ WP.categories(function(result) {
 ### Entradas en una Categoria
 
 ```javascript
-WP.category(callback, ID_CATEGORIA);
+WP.category(callback, ID_CATEGORIA, continuo);
 ```
+
+**continuo: ** Si se establece 1 continuará la paginación.
+
 **Respuesta**:
 Estos son los parametros que se reciben al llamar a una categoría, son los datos de las entradas de cada categoría.
 

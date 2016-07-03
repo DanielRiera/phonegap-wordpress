@@ -1,12 +1,14 @@
 /*
 
 Autor: Daniel Riera
-Version 2.0.2
+Version 2.0.3
 (C) 2016
 
 */
 url = null;
 token = null;
+num_post = 0;
+offset = 0;
 var WP = (function() {
 	function categorias(callback) {
 		checkStatus();
@@ -22,29 +24,34 @@ var WP = (function() {
 			}
 		});
 	}
-	function categoriaPost(callback,id) {
+	function categoriaPost(callback,id,continuo) {
+		if(continuo==1){
+			offset = parseInt(offset)+parseInt(num_post);
+		}
 		console.log("ID" +id);
 		checkStatus();
 		$.ajax({
 			url : url+"/wp-content/plugins/phonegap_connect/cat.php",
 			dataType : "JSON",
 			method : "POST",
-			data : "to="+token+"&id="+id,
+			data : "to="+token+"&id="+id+"&paginacion="+offset+"&num_post="+num_post,
 			success : function(result) {
-				console.log(JSON.stringify(result));
 				callback(result);
 			}, error : function(e) {
 				console.log("Error CATEGORY" + JSON.stringify(e));
 			}
 		});
 	}
-	function homePost(callback) {
+	function homePost(callback, continuo) {
+		if(continuo==1){
+			offset = parseInt(offset)+parseInt(num_post);
+		}
 		checkStatus();
 		$.ajax({
 			url : url+"/wp-content/plugins/phonegap_connect/home.php",
 			dataType : "JSON",
 			method : "POST",
-			data : "to="+token,
+			data : "to="+token+"&paginacion="+offset+"&num_post="+num_post,
 			success : function(result) {
 				callback(result);
 			}, error : function(e) {
@@ -53,6 +60,7 @@ var WP = (function() {
 		});
 	}
 	function post(callback,id){
+		offset = 0;
 		checkStatus();
 		$.ajax({
 			url : url+"/wp-content/plugins/phonegap_connect/post.php",
@@ -94,10 +102,10 @@ var WP = (function() {
 			}
 		});
 	}
-	function init(urltw, tokentw, mode) {
-		watchCallback ="";
+	function init(urltw, tokentw, mode, numeroPost) {
 		url = urltw;
 		token = tokentw;
+		num_post = numeroPost;
 		if(mode=="DEBUG") {
 				$.ajax({
 					url : url+"/wp-content/plugins/phonegap_connect/debug.php",

@@ -3,7 +3,7 @@
 Plugin Name: Phonegap Connect
 Description: Conexión a Wordpress desde Phonegap
 Author: Daniel Riera
-Version: 2.0.1
+Version: 2.0.3
 */
 
 function pho_panel_opciones(){
