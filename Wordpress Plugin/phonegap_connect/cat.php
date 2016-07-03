@@ -8,6 +8,7 @@ exit();
 global $wpdb;
 $elementos = 5;
 $yaCargados = 0;
+if($_POST['num_post']!=0 or $_POST['num_post']!="NULL") {
 $elementos = $_POST['num_post'];
 $yaCargados = $_POST['paginacion'];
 }
