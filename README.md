@@ -1,8 +1,9 @@
-#Conexión a Wordpress desde Phonegap
+#Conexión a Wordpress desde Phonegap v3.0.0
 
 
 Log de Cambios
 
+- Actualización a versión 3.0.0 (Compatibilidad con Plugin Oficial)
 - Añadido soporte para imágenes destacadas 27/06/2016
 - Añadido soporte para custom field 30/06/2016
 - Añadido opción de paginación en HOME y CATEGORIAS 03/07/2016
@@ -10,17 +11,7 @@ Log de Cambios
 
 Información importante
 ````
-Al añadir soporte para imagenes destacadas tanto en listados como en la vista del post se ha añadido lo siguiente.
-
-Antes: Se recibía la información en JSON directamente en una variable de la función. ejemplo: 
-function(result) {...} por lo tanto "result" contenida todo el JSON. Ahora se han separado en dos partes, una para
- los posts que reciba y otra para las imagenes por lo que quedaría de la siguiente forma
-
-Ahora: Si como en el ejemplo anterior la variable de la función recibia "result" ahora para llegar hasta por ejemplo
- el id deberá ser así result['posts']['ID'] y para las imagenes result['images']['image']. Ya se agregaría un 
- incremental si fuera necesario.
-
-Custom Field : Al añadir soporte de estos datos se ha añadido una tercera parte al JSON ( posts, images, custom_field).
+Plugin disponible en el repositorio de WordPress (A día 30/12/2016 no han aprobado el plugin)
 
 ````
 <a href="http://danielriera.net/phonegap/conectar-wordpress-con-aplicacion-phonegap" target="_blank">Entra en el blog</a>
@@ -44,26 +35,22 @@ Comprimir en ZIP la carpeta phonegap_connect, subir el plugin con el administrad
 ### Inicio **Obligatorio**
 
 ```javascript
-WP.ini(URL, TOKEN, MODO, NUMERO_POST_POR_LLAMADA);
+WP.init(URL, TOKEN, NUMERO_POST_POR_LLAMADA);
 ```
 
 **PARAMETROS**:
-Los parametros enviados a esta función inician el sistema y generan las variables de conexión a Wordpress, no tiene Callback, solo si se ejecuta con el MODO: "DEBUG"
+Los parametros enviados a esta función inician el sistema y generan las variables de conexión a Wordpress, no tiene Callback.
 
 **URL :** Dirección de la instalación de Wordpress **IMPORTANTE** incluir "http://" para que funcione adecuadamente, será la raíz de la instalación por "Ejemplo, http://www.example.com" además **recuerda** no incluir "/" al final de la URL.
 
 **TOKEN :** Token que tienes que generar en la instalación de Wordpress, puede ser números, letras, mayúsculas y minúsculas, todo junto, sin espacios, **No utilizar un token fácil de recordar o leer**.
-
-**MODO :** Puede ser "DEBUG" o ninguno, en caso de que esté fijado en "DEBUG" mostrará un mensaje por consola diciendo "Conexión establecida con [NOMBRE_DEL_BLOG]", en caso de establecer este modo y no recibir este mensaje, mostrará otro mensaje de error por consola.
-
-El modo DEBUG no se recomienda para entornos en producción, en producción utilizar "NULL". 
 
 **NUMERO_POST_POR_LLAMADA :** El número de elementos que devolverá el plugin Wordpress, si no se establece será por defecto 5.
 
 
 **Ejemplo:**
 ```javascript
-WP.ini("http://www.example.com","as545D4654654sdg64GH6A8SDhh48A16F81GAS6H468J4", "DEBUG");
+WP.init("http://www.example.com","as545D4654654sdg64GH6A8SDhh48A16F81GAS6H468J4", 5);
 ```
 
 ### Ultimas entradas (Home)
@@ -328,7 +315,7 @@ WP.page(function(result) {
 ```
 #Ayuda
 
-##Si te ha sido de ayuda el plugin y quieres apoyar a su desarrollo puedes hacer una donación :)
+##Me invitas a un café? :)
 
 [![paypal](https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E453H4H5H4XM2)
 
