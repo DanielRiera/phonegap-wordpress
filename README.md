@@ -28,7 +28,7 @@ Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha 
 
 #Instalacion
 
-Comprimir en ZIP la carpeta phonegap_connect, subir el plugin con el administrador de plugins de Wordpress, una vez instalado y activado configurar desde el menú lateral el plugin añadiendo TOKEN.
+Descargar desde el repositorio oficial de Wordpress o desde la instalación en su sitio web, una vez instalado y activado configurar desde el menú lateral el plugin, guardar la configuración y actualizar los enlaces permanentes (No es necesario modificar nada en enlaces permanentes con solo guardar ya funciona)
 
 #Uso
 
