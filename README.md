@@ -43,7 +43,7 @@ Los parametros enviados a esta función inician el sistema y generan las variabl
 
 **URL :** Dirección de la instalación de Wordpress **IMPORTANTE** incluir "http://" para que funcione adecuadamente, será la raíz de la instalación por "Ejemplo, http://www.example.com" además **recuerda** no incluir "/" al final de la URL.
 
-**TOKEN :** Token que tienes que generar en la instalación de Wordpress, puede ser números, letras, mayúsculas y minúsculas, todo junto, sin espacios, **No utilizar un token fácil de recordar o leer**.
+**TOKEN :** Lo genera automáticamente el plugin al instalarlo.
 
 **NUMERO_POST_POR_LLAMADA :** El número de elementos que devolverá el plugin Wordpress, si no se establece será por defecto 5.
 
