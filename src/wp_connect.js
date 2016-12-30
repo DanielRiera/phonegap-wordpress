@@ -6,7 +6,7 @@ Version 3.0.0
 offset = 0;
 var WP = {
 	init: function(urlOK, tokenOK, num){
-		num_post = num;
+		num_post = num || 5;
 		url = urlOK;
 		token = tokenOK;
 		console.log("Wordpress Ready - Connect to "+ url);
