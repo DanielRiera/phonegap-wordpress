@@ -9,11 +9,10 @@ Log de Cambios
 - Añadido opción de paginación en HOME y CATEGORIAS 03/07/2016
 
 
-Información importante
-````
+#Información importante
+
 Plugin disponible en el repositorio de WordPress Descargar <a href="https://wordpress.org/plugins/phonegap-connect/">desde Aquí</a>
 
-````
 <a href="http://danielriera.net/phonegap/conectar-wordpress-con-aplicacion-phonegap" target="_blank">Entra en el blog</a>
 
 Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha mejorado el plugin de Wordpress para ofrecer más datos sobre todo lo que puede recopilar de Wordpress, se han añadido mejoras en el plugin que hace más facil el control de lo que se muestra en nuestra aplicación.
