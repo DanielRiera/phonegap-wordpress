@@ -11,7 +11,7 @@ Log de Cambios
 
 Información importante
 ````
-Plugin disponible en el repositorio de WordPress (A día 30/12/2016 no han aprobado el plugin)
+Plugin disponible en el repositorio de WordPress Descargar <a href="https://wordpress.org/plugins/phonegap-connect/">desde Aquí</a>
 
 ````
 <a href="http://danielriera.net/phonegap/conectar-wordpress-con-aplicacion-phonegap" target="_blank">Entra en el blog</a>
