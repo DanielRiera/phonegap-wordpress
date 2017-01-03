@@ -3,6 +3,8 @@
 
 Log de Cambios
 
+- Actualizado soporte para paginas
+- Añadido soporte para siguiente post y anterior
 - Actualización a versión 3.0.0 (Compatibilidad con Plugin Oficial)
 - Añadido soporte para imágenes destacadas 27/06/2016
 - Añadido soporte para custom field 30/06/2016
@@ -22,6 +24,8 @@ Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha 
 - [Listado de Categorias creadas.](https://github.com/DanielRiera/phonegap-wordpress#categorias)
 - [Listado de Entradas de cada categoría](https://github.com/DanielRiera/phonegap-wordpress#entradas-en-una-categoria)
 - [Entradas](https://github.com/DanielRiera/phonegap-wordpress#entrada)
+- [Siguiente Entrada](https://github.com/DanielRiera/phonegap-wordpress#siguiente-entrada)
+- [Entrada Anterior](https://github.com/DanielRiera/phonegap-wordpress#entrada-anterior)
 - [Listado de Comentarios de cada Entradas](https://github.com/DanielRiera/phonegap-wordpress#comentarios)
 - [Páginas](https://github.com/DanielRiera/phonegap-wordpress#paginas)
 
@@ -226,6 +230,100 @@ Estos son los parametros que se reciben al llamar a la función de entradas, son
 
 ```javascript
 WP.post(function(result) {
+             console.log(result['posts']['post_title']);
+    }, 1);
+```
+
+### Siguiente Entrada
+
+```javascript
+WP.nextPost(callback, ID_POST);
+```
+
+**Respuesta**:
+Estos son los parametros que se reciben al llamar a la función de entradas, son datos del post.
+
+    posts:
+        [ID]
+        [post_author]
+        [post_date]
+        [post_date_gmt] 
+        [post_content] 
+        [post_title] 
+        [post_excerpt] 
+        [post_status]
+        [comment_status]
+        [ping_status] 
+        [post_password] 
+        [post_name]
+        [to_ping] 
+        [pinged] 
+        [post_modified] 
+        [post_modified_gmt]
+        [post_content_filtered] 
+        [post_parent] 
+        [guid] 
+        [menu_order]
+        [post_type]
+        [post_mime_type] 
+        [comment_count]
+        [filter]
+    images:
+        [imagen]
+    custom_field
+        [NOMBRE_PERSONALIZADOS]
+
+**Ejemplo**:
+
+```javascript
+WP.nextPost(function(result) {
+             console.log(result['posts']['post_title']);
+    }, 1);
+```
+
+### Entrada Anterior
+
+```javascript
+WP.prevPost(callback, ID_POST);
+```
+
+**Respuesta**:
+Estos son los parametros que se reciben al llamar a la función de entradas, son datos del post.
+
+    posts:
+        [ID]
+        [post_author]
+        [post_date]
+        [post_date_gmt] 
+        [post_content] 
+        [post_title] 
+        [post_excerpt] 
+        [post_status]
+        [comment_status]
+        [ping_status] 
+        [post_password] 
+        [post_name]
+        [to_ping] 
+        [pinged] 
+        [post_modified] 
+        [post_modified_gmt]
+        [post_content_filtered] 
+        [post_parent] 
+        [guid] 
+        [menu_order]
+        [post_type]
+        [post_mime_type] 
+        [comment_count]
+        [filter]
+    images:
+        [imagen]
+    custom_field
+        [NOMBRE_PERSONALIZADOS]
+
+**Ejemplo**:
+
+```javascript
+WP.prevPost(function(result) {
              console.log(result['posts']['post_title']);
     }, 1);
 ```

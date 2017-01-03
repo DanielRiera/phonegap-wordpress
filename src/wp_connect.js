@@ -73,6 +73,45 @@ var WP = {
 			}
 		});
 	},
+	page: function(callback,id){
+		offset = 0;
+		$.ajax({
+			url : url+"/app/"+token+"/get_page/"+id+"/0/",
+			dataType : "JSON",
+			method : "POST",
+			success : function(result) {
+				callback(result);
+			}, error : function(e) {
+				console.log("Error Page" + JSON.stringify(e));
+			}
+		});
+	},
+	nextPost: function(callback,id){
+		offset = 0;
+		$.ajax({
+			url : url+"/app/"+token+"/get_next_post/"+id+"/0/",
+			dataType : "JSON",
+			method : "POST",
+			success : function(result) {
+				callback(result);
+			}, error : function(e) {
+				console.log("Error next POST" + JSON.stringify(e));
+			}
+		});
+	},
+	prevPost: function(callback,id){
+		offset = 0;
+		$.ajax({
+			url : url+"/app/"+token+"/get_prev_post/"+id+"/0/",
+			dataType : "JSON",
+			method : "POST",
+			success : function(result) {
+				callback(result);
+			}, error : function(e) {
+				console.log("Error prev POST" + JSON.stringify(e));
+			}
+		});
+	},
 	comment: function(callback,id) {
 		$.ajax({
 			url : url+"/app/"+token+"/get_comments/"+id+"/0/",
