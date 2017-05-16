@@ -419,7 +419,7 @@ WP.addUser(callback, user, email, pass, nombre);
 ```
 
 **Respuesta**:
-Estos son los parametros que se reciben al llamar a la función de comentarios, son datos los datos de todos los comenatarios de esa entrada.
+Estos son los parametros que se reciben al llamar a la función de addUser, devuelve el ID y el primer nombre del usuario.
 
     [ID] -> ID de usuario
     [first_name] -> Nombre del usuario
@@ -439,7 +439,7 @@ WP.login(callback, user, pass);
 ```
 
 **Respuesta**:
-Estos son los parametros que se reciben al llamar a la función de comentarios, son datos los datos de todos los comenatarios de esa entrada.
+Estos son los parametros que se reciben al llamar a la función de logi, son los datos del usuario que ha iniciado sesión.
 
     [ID]
     [allcaps]
