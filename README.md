@@ -3,6 +3,7 @@
 
 Log de Cambios
 
+- Añadido soporte para registro y login (16/05/2017)
 - Actualizado soporte para paginas
 - Añadido soporte para siguiente post y anterior
 - Actualización a versión 3.0.0 (Compatibilidad con Plugin Oficial)
@@ -410,6 +411,69 @@ WP.page(function(result) {
              console.log(result['posts'][i]['post_title']);
     }, 1);
 ```
+
+### Registrar Usuario
+
+```javascript
+WP.addUser(callback, user, email, pass, nombre);
+```
+
+**Respuesta**:
+Estos son los parametros que se reciben al llamar a la función de comentarios, son datos los datos de todos los comenatarios de esa entrada.
+
+    [ID] -> ID de usuario
+    [first_name] -> Nombre del usuario
+
+**Ejemplo**:
+
+```javascript
+WP.addUser(function(result) {
+        console.log(result['first_name'] + " se ha registrado correctamente con el id " + result['ID'])
+    }, 'USUARIO','EMAIL','CONTRASEÑA','NOMBRE');
+```
+
+### Login con usuario existente
+
+```javascript
+WP.login(callback, user, pass);
+```
+
+**Respuesta**:
+Estos son los parametros que se reciben al llamar a la función de comentarios, son datos los datos de todos los comenatarios de esa entrada.
+
+    [ID]
+    [allcaps]
+        [level_0]
+        [read]
+        [subscriber]
+    [cap_key]
+    [caps]
+        [subscriber]
+    [data]
+        [ID]
+        [display_name]
+        [user_activation_key]
+        [user_email]
+        [user_login]
+        [user_nicename]
+        [user_pass]
+        [user_registered]
+        [user_status]
+        [user_url]
+    [filter]
+    [roles]
+    [imagen]
+
+
+**Ejemplo**:
+
+```javascript
+WP.login(function(result) {
+        console.log(result['data']['data']['first_name'] + " ha realizado el logueo correctamente")
+    }, 'USUARIO','CONTRASEÑA');
+```
+
+
 #Ayuda
 
 ##Me invitas a un café? :)

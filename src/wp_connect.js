@@ -124,5 +124,40 @@ var WP = {
 				console.log("Error COMMENTS-> URL "+this.url+" Result ->" + JSON.stringify(e));
 			}
 		});
+	},
+	addUser: function(callback,user, email, pass, nombre) {
+		$.ajax({
+			url : url+"/app/"+token+"/add_user/0/0/",
+			dataType : "JSON",
+			data : {
+				user: user,
+				passwd: pass,
+				email: email,
+				nombre: nombre
+			},
+			method : "POST",
+			success : function(result) {
+				callback(result);
+			}, error : function(e) {
+				console.log("Error add USER -> URL "+this.url+" Result ->" + JSON.stringify(e));
+			}
+		});
+	},
+	login: function(callback, user, pass) {
+		$.ajax({
+			url : url+"/app/"+token+"/login/0/0/",
+			dataType : "JSON",
+			data : {
+				user_login: user,
+				user_password: pass,
+				remember : true
+			},
+			method : "POST",
+			success : function(result) {
+				callback(result);
+			}, error : function(e) {
+				console.log("Error login USER -> URL "+this.url+" Result ->" + JSON.stringify(e));
+			}
+		});
 	}
 };
