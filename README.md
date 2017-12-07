@@ -231,7 +231,12 @@ Estos son los parametros que se reciben al llamar a la función de entradas, son
 
 ```javascript
 WP.post(function(result) {
-             console.log(result['posts']['post_title']);
+             console.log(result['posts'][0][0]['post_title']);
+             //Usa lo siguiente para que sea más facil.
+             var p = result['posts'][0][0];
+             //De este modo tendrás los datos del post desde
+             console.log(p['post_title']);
+             
     }, 1);
 ```
 
