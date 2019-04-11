@@ -481,7 +481,7 @@ WP.login(function(result) {
 
 # Ayuda
 
-##Me invitas a un café? :)
+## Me invitas a un café? :)
 
 [![paypal](https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E453H4H5H4XM2)
 
