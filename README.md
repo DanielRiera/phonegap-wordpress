@@ -1,4 +1,4 @@
-#Conexión a Wordpress desde Phonegap v3.0.0
+# Conexión a Wordpress desde Phonegap v3.0.0
 
 
 Log de Cambios
@@ -12,7 +12,7 @@ Log de Cambios
 - Añadido opción de paginación en HOME y CATEGORIAS 03/07/2016
 
 
-#Información importante
+# Información importante
 
 Plugin disponible en el repositorio de WordPress Descargar <a href="https://wordpress.org/plugins/phonegap-connect/">desde Aquí</a>
 
@@ -20,7 +20,7 @@ Plugin disponible en el repositorio de WordPress Descargar <a href="https://word
 
 Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha mejorado el plugin de Wordpress para ofrecer más datos sobre todo lo que puede recopilar de Wordpress, se han añadido mejoras en el plugin que hace más facil el control de lo que se muestra en nuestra aplicación.
 
-#¿Que hace?
+# ¿Que hace?
 
 - [Listado de Categorias creadas.](https://github.com/DanielRiera/phonegap-wordpress#categorias)
 - [Listado de Entradas de cada categoría](https://github.com/DanielRiera/phonegap-wordpress#entradas-en-una-categoria)
@@ -30,11 +30,11 @@ Versión actualizada del sistema de conexión entre Wordpress y Phonegap, se ha 
 - [Listado de Comentarios de cada Entradas](https://github.com/DanielRiera/phonegap-wordpress#comentarios)
 - [Páginas](https://github.com/DanielRiera/phonegap-wordpress#paginas)
 
-#Instalacion
+# Instalacion
 
 Descargar desde el repositorio oficial de Wordpress o desde la instalación en su sitio web, una vez instalado y activado configurar desde el menú lateral el plugin, guardar la configuración y actualizar los enlaces permanentes (No es necesario modificar nada en enlaces permanentes con solo guardar ya funciona)
 
-#Uso
+# Uso
 
 ### Inicio **Obligatorio**
 
@@ -479,13 +479,13 @@ WP.login(function(result) {
 ```
 
 
-#Ayuda
+# Ayuda
 
 ##Me invitas a un café? :)
 
 [![paypal](https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E453H4H5H4XM2)
 
-#Licencia
+# Licencia
 
 Copyright (c) 2016 Daniel Riera
 
